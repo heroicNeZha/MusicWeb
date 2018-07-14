@@ -33,7 +33,7 @@ namespace MusicWeb.Controller
                 };
                 DataTable dt = DBHelper.GetDataTable(sql, parm);
                 DBHelper.SqlClose();
-                if (dt.Rows[0].ItemArray[5].ToString() == pwd)
+                if (dt.Rows.Count > 0 && dt.Rows[0].ItemArray[5].ToString() == pwd)
                 {
                     User user = new User();
                     user.Uid = (int)dt.Rows[0].ItemArray[0];
@@ -56,14 +56,14 @@ namespace MusicWeb.Controller
         {
             if (Exist(name))
             {
-                string sql = "SELECT * FROM user WHERE Uusername = @name AND Uadmin = 1";
+                string sql = "SELECT * FROM user_ WHERE Uusername = @name AND Uadmin = 1";
                 SqlParameter[] parm = new SqlParameter[]
                 {
                     new SqlParameter("@name",name)
                 };
                 DataTable dt = DBHelper.GetDataTable(sql, parm);
                 DBHelper.SqlClose();
-                if (dt.Rows[0].ItemArray[5].ToString() == pwd)
+                if (dt.Rows.Count>0&&dt.Rows[0].ItemArray[5].ToString() == pwd)
                 {
                     User user = new User();
                     user.Uid = (int)dt.Rows[0].ItemArray[0];

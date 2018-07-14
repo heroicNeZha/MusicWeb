@@ -5622,7 +5622,7 @@ body.modal-open,
   overflow-y: scroll;
 }
 
-.modal.fade .modal-dialog {
+.modal .fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
       -ms-transform: translate(0, -25%);
           transform: translate(0, -25%);
@@ -5632,7 +5632,7 @@ body.modal-open,
           transition: transform 0.3s ease-out;
 }
 
-.modal.in .modal-dialog {
+.modal .in .modal-dialog {
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -5640,6 +5640,7 @@ body.modal-open,
 
 .modal-dialog {
   z-index: 1050;
+  background-color:white;
   width: auto;
   padding: 10px;
   margin-right: auto;

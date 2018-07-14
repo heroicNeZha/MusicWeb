@@ -182,8 +182,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Website\About.aspx" />
-    <Content Include="Website\Contact.aspx" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\NewSinger.aspx" />
+    <Content Include="Admin\SongManage.aspx" />
+    <Content Include="Admin\SongUpload.aspx" />
+    <Content Include="Admin\Welcome.aspx" />
+    <Content Include="Audio\追梦赤子心.mp3" />
+    <Content Include="Content\vpplayer.css" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\20180712095222.png" />
+    <Content Include="Images\photo.jpg" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\vpplayer.js" />
+    <Content Include="Website\Artist.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -196,6 +207,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Website\Default.aspx" />
+    <Content Include="Admin\Admin.Master" />
+    <Content Include="Website\Singer.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -244,26 +257,63 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewSinger.aspx.cs">
+      <DependentUpon>NewSinger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewSinger.aspx.designer.cs">
+      <DependentUpon>NewSinger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SongManage.aspx.cs">
+      <DependentUpon>SongManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SongManage.aspx.designer.cs">
+      <DependentUpon>SongManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SongUpload.aspx.cs">
+      <DependentUpon>SongUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SongUpload.aspx.designer.cs">
+      <DependentUpon>SongUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\DBHelper.cs" />
+    <Compile Include="Controller\DMusic.cs" />
+    <Compile Include="Controller\DSinger.cs" />
     <Compile Include="Controller\DUser.cs" />
     <Compile Include="Models\Music.cs" />
     <Compile Include="Models\MusicList.cs" />
     <Compile Include="Models\Remark.cs" />
     <Compile Include="Models\Singer.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Website\About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="Website\Artist.aspx.cs">
+      <DependentUpon>Artist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Website\About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Website\Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Website\Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="Website\Artist.aspx.designer.cs">
+      <DependentUpon>Artist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -305,11 +355,17 @@
     <Compile Include="Website\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Website\Singer.aspx.cs">
+      <DependentUpon>Singer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\Singer.aspx.designer.cs">
+      <DependentUpon>Singer.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Start\" />
-    <Folder Include="Manager\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

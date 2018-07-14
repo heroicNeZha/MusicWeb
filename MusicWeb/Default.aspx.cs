@@ -33,7 +33,7 @@ namespace MusicWeb
                         Session["user"] = user;
                         Session["uid"] = user.Uid;
                         Response.Write("<script>alert('登录成功!');</script>");
-                        Server.Transfer("~/Website/Contact.aspx");
+                        Response.Redirect("~/Website/Default.aspx?song=1");
                     }
                     else
                     {

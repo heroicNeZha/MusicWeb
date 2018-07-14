@@ -14,6 +14,7 @@ namespace MusicWeb.Models
         string mresource;
         string mlength;
         int mclick;
+        string mpic;
 
         public int Mid
         {
@@ -103,6 +104,19 @@ namespace MusicWeb.Models
             set
             {
                 mclick = value;
+            }
+        }
+
+        public string Mpic
+        {
+            get
+            {
+                return mpic;
+            }
+
+            set
+            {
+                mpic = value;
             }
         }
     }
