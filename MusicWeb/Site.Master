@@ -4,7 +4,7 @@
 
 <html lang="zh">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - 网难云音乐</title>
@@ -12,8 +12,9 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <script type="text/javascript" src="../Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../Scripts/bootstrap.min.js"></script>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="~/Content/vpplayer.css">
     <script type="text/javascript" src="../Scripts/vpplayer.js"></script>
@@ -47,43 +48,36 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">网难云音乐</a>
                 </div>
-                <%if (Session["role"] == null)
-                    { %>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">主页</a></li>
-                        <li><a runat="server" href="~/">关于</a></li>
-                        <li><a runat="server" href="~/">联系方式</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" href="~/">注册</a></li>
-                        <li><a runat="server" href="~/">登录</a></li>
-                    </ul>
-                </div>
-                <%}
-                                         else if (Session["role"].Equals("user"))
-                                         { %>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Website/Default.aspx?song=1">首页</a></li>
                         <li><a runat="server" href="~/Website/Rank.aspx">排行榜</a></li>
                         <li><a runat="server" href="~/Website/List.aspx">歌单</a></li>
-                        <li><a runat="server" href="~/Website/Singer.aspx">歌手</a></li>
+                        <li><a runat="server" href="~/Website/Artist.aspx">歌手</a></li>
                     </ul>
                     <div class="navbar-left navbar-form" role="search">
                         <div class="form-group">
-                            <input type="text" id="search" class="form-control" placeholder="音乐/歌手/歌单">    
+                            <input type="text" id="search" class="form-control" placeholder="音乐/歌手/歌单">
                         </div>
                         <asp:Button ID="Button1" runat="server" CssClass="btn btn-default" Text="搜索" />
                     </div>
+                    <%if (Session["role"] == null)
+                    { %>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" href="~/">注册</a></li>
+                        <li><a runat="server" href="~/">登录</a></li>
+                    </ul>
+                    <%}
+                        else if (Session["role"].Equals("user"))
+                        { %>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" href="~/Website/Default.aspx" title="Manage your account">Hello, <strong><%: Session["user"]  %></strong> !</a></li>
                         <li>
                             <a runat="server" href="~/Default.aspx">注销</a>
                         </li>
                     </ul>
+                    <%} %>
                 </div>
-                <%} %>
             </div>
         </div>
         <div class="container body-content">

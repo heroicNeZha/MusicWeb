@@ -208,6 +208,8 @@
     </Content>
     <Content Include="Website\Default.aspx" />
     <Content Include="Admin\Admin.Master" />
+    <Content Include="Website\List.aspx" />
+    <Content Include="Website\Rank.aspx" />
     <Content Include="Website\Singer.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -354,6 +356,20 @@
     </Compile>
     <Compile Include="Website\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Website\Rank.aspx.cs">
+      <DependentUpon>Rank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Website\Rank.aspx.designer.cs">
+      <DependentUpon>Rank.aspx</DependentUpon>
     </Compile>
     <Compile Include="Website\Singer.aspx.cs">
       <DependentUpon>Singer.aspx</DependentUpon>

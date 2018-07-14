@@ -87,12 +87,11 @@ namespace MusicWeb.Controller
             return songs;
         }
 
-        public static List<Music> getSongsBySinger(int sid)
+        public static List<Music> getSongsByRank()
         {
-            string sql = "SELECT * FROM job,company WHERE Jcompany = @cid AND Cid = Jcompany";
+            string sql = "SELECT * FROM music LEFT JOIN singer ON (MUSIC.Msinger=SINGER.SID) ORDER BY Mclick DESC";
             SqlParameter[] parm = new SqlParameter[]
             {
-                new SqlParameter("@cid",sid)
             };
             DataTable dt = DBHelper.GetDataTable(sql, parm);
             DBHelper.SqlClose();
@@ -103,14 +102,46 @@ namespace MusicWeb.Controller
                 song.Mid = (int)row.ItemArray[0];
                 song.Mname = row.ItemArray[1].ToString();
                 Singer singer = new Singer();
-                singer.Sid = (int)row.ItemArray[7];
-                singer.Sname = row.ItemArray[8].ToString();
-                singer.Sintroduce = row.ItemArray[9].ToString();
+                singer.Sid = (int)row.ItemArray[8];
+                singer.Sname = row.ItemArray[9].ToString();
+                singer.Sintroduce = row.ItemArray[10].ToString();
+                singer.Spic = row.ItemArray[11].ToString();
                 song.Msinger = singer;
                 song.Malbum = row.ItemArray[3].ToString();
                 song.Mresource = row.ItemArray[4].ToString();
                 song.Mlength = row.ItemArray[5].ToString();
                 song.Mclick = (int)row.ItemArray[6];
+                song.Mpic = row.ItemArray[7].ToString();
+                songs.Add(song);
+            }
+            return songs;
+        }
+
+        public static List<Music> getSongsBySinger(int sid)
+        {
+            string sql = "SELECT * FROM music LEFT JOIN singer ON (MUSIC.Msinger=SINGER.SID) WHERE Msinger = @sid";
+            SqlParameter[] parm = new SqlParameter[]
+            {
+                new SqlParameter("@sid",sid)
+            };
+            DataTable dt = DBHelper.GetDataTable(sql, parm);
+            DBHelper.SqlClose();
+            List<Music> songs = new List<Music>();
+            foreach (DataRow row in dt.Rows)
+            {
+                Music song = new Music();
+                song.Mid = (int)row.ItemArray[0];
+                song.Mname = row.ItemArray[1].ToString();
+                Singer singer = new Singer();
+                singer.Sid = (int)row.ItemArray[8];
+                singer.Sname = row.ItemArray[9].ToString();
+                singer.Sintroduce = row.ItemArray[10].ToString();
+                song.Msinger = singer;
+                song.Malbum = row.ItemArray[3].ToString();
+                song.Mresource = row.ItemArray[4].ToString();
+                song.Mlength = row.ItemArray[5].ToString().Equals("")?"--:--":row.ItemArray[5].ToString();
+                song.Mclick = (int)row.ItemArray[6];
+                song.Mpic = row.ItemArray[7].ToString();
                 songs.Add(song);
             }
             return songs;

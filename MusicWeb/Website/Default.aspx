@@ -88,7 +88,7 @@ $(document).ready(function(){
                             <a class="song" href="Default.aspx?song=<%:song.Mid %>"><%:song.Mname %></a>
                             <br>
                             <span>
-                                <a class="artist" href="Artist.aspx?singer=<%:song.Msinger.Sid %>"><%:song.Msinger.Sname %></a>
+                                <a class="artist" href="Singer.aspx?singer=<%:song.Msinger.Sid %>"><%:song.Msinger.Sname %></a>
                             </span>
                         </h6>
                     </div>
@@ -96,7 +96,7 @@ $(document).ready(function(){
                         }
                     %>
                     <div class="songlist-item">
-                        <img src="../Images/1.jpg" alt="">
+                        <img src="../Images/0.jpg" alt="">
                         <h6>
                             <a class="song">蜗牛与黄鹂鸟</a>
                             <br />

@@ -212,6 +212,99 @@ input[type="select"] {
 .artist{
     color:#999;
 }
+/* rank */
+.rank-title{
+    width:100%;
+    color:darksalmon;
+    vertical-align:central;
+    border-bottom:1px solid #CCC;
+    margin-top:30px;
+    margin-bottom:3px;
+}
+.rank-title img{
+    width: 50px;
+	height: 50px;
+    border-radius: 5px;
+}
+.rank-content{
+    vertical-align:central;
+    font-size: 14px;
+}
+/* artist */
+.artist-list{
+    width: 1000px;
+    margin:50px auto;
+    position: relative;
+}
+.singer-table{
+
+}
+.singer-img{
+    width:60px;
+    height:60px;
+}
+/* singer */
+.SingerContent
+{
+   width: 1000px;
+   height:333px;
+   margin: 0 auto;
+   font-size: 14px;
+}
+.SingerDetails{
+   margin-bottom: 100px;
+   margin-top: 50px;
+   position: relative;
+   overflow: hidden;
+}
+.SingerDetails-bg{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    -webkit-filter: blur(50px);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.Singer-pic{
+    height: 333px;
+    display: flex;
+}
+.Singer-pic img{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+.Singer-details{
+    height:333px;
+    display: flex;
+    background-color: rgba(153, 153, 153, 0.5)
+}
+.Singer-details ul{
+    margin:auto 0;
+    list-style: none;
+}
+.play-all{
+    margin-left:30px;
+}
+.Singer-details ul li{
+    margin: 30px 0px;
+}
+.songlist
+{
+    margin-bottom: 100px;
+}
+.tablehead{
+    color: #999999;
+}
+.songlist-table{
+    vertical-align: middle;
+    width:100%;
+}
+.song-img{
+    width:30px;
+    height:30px;
+}
 
 /* admin/default */
 .nav-back{

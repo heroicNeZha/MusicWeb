@@ -36,10 +36,10 @@ namespace MusicWeb.Controller
             foreach (DataRow row in dt.Rows)
             {
                 Singer singer = new Singer();
-                singer.Sid = (int)row.ItemArray[8];
-                singer.Sname = row.ItemArray[9].ToString();
-                singer.Sintroduce = row.ItemArray[10].ToString();
-                singer.Spic = row.ItemArray[11].ToString();
+                singer.Sid = (int)row.ItemArray[0];
+                singer.Sname = row.ItemArray[1].ToString();
+                singer.Sintroduce = row.ItemArray[2].ToString();
+                singer.Spic = row.ItemArray[3].ToString();
                 return singer;
             }
             return null;
@@ -59,6 +59,8 @@ namespace MusicWeb.Controller
                 Singer singer = new Singer();
                 singer.Sid = (int)row.ItemArray[0];
                 singer.Sname = row.ItemArray[1].ToString();
+                singer.Sintroduce = row.ItemArray[2].ToString();
+                singer.Spic = row.ItemArray[3].ToString();
                 singers.Add(singer);
             }
             return singers;
