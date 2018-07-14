@@ -25,7 +25,7 @@ $(document).ready(function(){
 });
             </script>
             <div class="cover-area">
-                <style>
+                <style> 
                     .pic-blur{
                         background-image:url(<%:music.Mpic %>);
                     }
