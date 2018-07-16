@@ -30,7 +30,7 @@ namespace MusicWeb.Admin
                         Session["role"] = "admin";
                         Session["user"] = user;
                         Response.Write("<script>alert('登录成功!');</script>");
-                        Server.Transfer("~/Admin/Welcome.aspx");
+                        Response.Redirect("~/Admin/Welcome.aspx");
                     }
                     else
                     {
